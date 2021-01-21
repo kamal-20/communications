@@ -1,0 +1,23 @@
+clc;
+a = input('Enter the amplitude:');
+f = input('Enter frequency:');
+t = 0:0.02:2;
+x1 = 1;
+x2 = a*sin(2*pi*f*t);
+y = x1.*x2;
+subplot(3,1,1);
+stem(x1);
+xlabel('Time');
+ylabel('Amplitude');
+title('Impulse Signal');
+subplot(3,1,2);
+title('Sinusoidal Signal');
+plot(t,x2);
+ylim([-a-0.2 a+0.2])
+xlabel('Time');
+ylabel('Amplitude');
+subplot(3,1,3);
+title('PAM Waveform');
+stem(t,y);
+xlabel('Time');
+ylabel('Amplitude');
